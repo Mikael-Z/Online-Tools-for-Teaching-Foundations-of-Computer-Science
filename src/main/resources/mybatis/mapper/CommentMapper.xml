@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teach.mapper.CommentMapper">
+    <resultMap id="commentMap" type="com.teach.pojo.Comment">
+        <id column="id" property="id"></id>
+        <result column="user_id" property="userId"></result>
+        <result column="title" property="title"></result>
+        <result column="content" property="content"></result>
+        <result column="img_src" property="imgSrc"></result>
+        <result column="create_date" property="createDate"></result>
+
+        <association property="user" javaType="com.teach.pojo.User">
+            <id column="user_id" property="userId"></id>
+            <result column="user_account" property="userAccount"></result>
+            <result column="user_password" property="userPassword"></result>
+            <result column="user_name" property="userName"></result>
+            <result column="nick_name" property="nickName"></result>
+            <result column="user_birthday" property="userBirthday"></result>
+            <result column="email" property="email"></result>
+            <result column="phone_number" property="phoneNumber"></result>
+            <result column="user_status" property="userStatus"></result>
+            <result column="create_date" property="createDate"></result>
+            <result column="account_status" property="accountStatus"></result>
+        </association>
+    </resultMap>
+
+    <resultMap id="userCommentMap" type="com.teach.pojo.Remark">
+        <id property="id" column="id" />
+        <result property="userId" column="user_id" />
+        <result property="commentId" column="comment_id" />
+        <result property="content" column="content" />
+        <result property="createDate" column="create_date" />
+
+        <association property="user" javaType="com.teach.pojo.User">
+            <id column="user_id" property="userId"></id>
+            <result column="user_account" property="userAccount"></result>
+            <result column="user_password" property="userPassword"></result>
+            <result column="user_name" property="userName"></result>
+            <result column="nick_name" property="nickName"></result>
+            <result column="user_birthday" property="userBirthday"></result>
+            <result column="email" property="email"></result>
+            <result column="phone_number" property="phoneNumber"></result>
+            <result column="user_status" property="userStatus"></result>
+            <result column="create_date" property="createDate"></result>
+            <result column="account_status" property="accountStatus"></result>
+        </association>
+    </resultMap>
+
+    <!--根据类型查询字典项-->
+    <select id="findAllComment" resultMap="commentMap">
+        select
+            c.id, c.user_id, c.title, c.content, c.img_src, c.create_date, u.nick_name
+        from
+            comment c, user u
+        where
+            c.user_id = u.user_id
+    </select>
+
+    <insert id="addComment" parameterType="com.teach.pojo.Comment">
+        insert into comment
+            (id, user_id, title, content, img_src, create_date)
+        values
+            (#{id}, #{userId}, #{title}, #{content}, #{imgSrc}, #{createDate})
+    </insert>
+
+    <!--根据id查询评论-->
+    <select id="findCommentById" resultMap="commentMap">
+        select
+            c.id, c.user_id, c.title, c.content, c.img_src, c.create_date, u.nick_name
+        from
+            comment c, user u
+        where
+            id = #{id} and c.user_id = u.user_id
+    </select>
+
+    <select id="findCommentDetail" resultMap="userCommentMap">
+        select
+            r.id, r.user_id, r.comment_id, r.content, r.create_date, u.user_id, u.nick_name
+        from
+            remark r, user u
+        where
+            r.comment_id = #{id} and r.user_id = u.user_id
+    </select>
+
+    <insert id="addUserComment" parameterType="com.teach.pojo.Remark">
+        insert into remark
+            (id, user_id, comment_id, content, create_date)
+        values
+            (#{id}, #{userId}, #{commentId}, #{content}, #{createDate})
+    </insert>
+
+
+</mapper>

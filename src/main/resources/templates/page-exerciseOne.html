@@ -1,0 +1,332 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+        function showAnswers(answerId){
+            document.getElementById(answerId).style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Left Panel-->
+    <aside id="left-panel" class="left-panel">
+        <div th:insert="common.html::leftBar"></div>
+    </aside>
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-search"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="dropdown for-notification">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="count bg-danger">5</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                                <p class="red">You have 3 Notification</p>
+                                <a class="dropdown-item media bg-flat-color-1" href="#">
+                                <i class="fa fa-check"></i>
+                                <p>Server #1 overloaded.</p>
+                            </a>
+                                <a class="dropdown-item media bg-flat-color-4" href="#">
+                                <i class="fa fa-info"></i>
+                                <p>Server #2 overloaded.</p>
+                            </a>
+                                <a class="dropdown-item media bg-flat-color-5" href="#">
+                                <i class="fa fa-warning"></i>
+                                <p>Server #3 overloaded.</p>
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown for-message">
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                id="message"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ti-email"></i>
+                                <span class="count bg-primary">9</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="message">
+                                <p class="red">You have 4 Mails</p>
+                                <a class="dropdown-item media bg-flat-color-1" href="#">
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
+                                <span class="message media-body">
+                                    <span class="name float-left">Jonathan Smith</span>
+                                    <span class="time float-right">Just now</span>
+                                        <p>Hello, this is an example msg</p>
+                                </span>
+                            </a>
+                                <a class="dropdown-item media bg-flat-color-4" href="#">
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
+                                <span class="message media-body">
+                                    <span class="name float-left">Jack Sanders</span>
+                                    <span class="time float-right">5 minutes ago</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                </span>
+                            </a>
+                                <a class="dropdown-item media bg-flat-color-5" href="#">
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
+                                <span class="message media-body">
+                                    <span class="name float-left">Cheryl Wheeler</span>
+                                    <span class="time float-right">10 minutes ago</span>
+                                        <p>Hello, this is an example msg</p>
+                                </span>
+                            </a>
+                                <a class="dropdown-item media bg-flat-color-3" href="#">
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
+                                <span class="message media-body">
+                                    <span class="name float-left">Rachel Santos</span>
+                                    <span class="time float-right">15 minutes ago</span>
+                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                </span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+
+                    <div class="language-select dropdown" id="language-select">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                            <i class="flag-icon flag-icon-us"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="language">
+                            <div class="dropdown-item">
+                                <span class="flag-icon flag-icon-fr"></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-es"></i>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-us"></i>
+                            </div>
+                            <div class="dropdown-item">
+                                <i class="flag-icon flag-icon-it"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Exercise</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Exercises</a></li>
+                            <li class="active">Exercise</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>1. Use truth tables to verify these equivalences. </span> </br>
+                                <span>a). p ∧ T ≡ p. </span> </br>
+                                <span>b). p ∨ F ≡ p. </span> </br>
+                                <span>c). p ∧ F ≡ F. </span> </br>
+                                <span>d). p ∨ T ≡ T. </span> </br>
+                                <span>e). p ∨ p ≡ p. </span> </br>
+                                <div>
+                                    <img id="answer1" style="display: none" th:src="${session.answerList.get(0).getSrc()}" th:alt="${session.answerList.get(0).getTitle()}">
+                                    <button class="button" onclick="showAnswers('answer1')">Show Answer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>2. Use truth tables to verify the commutative laws. </span> </br>
+                                <span>a). p ∨ q ≡ q ∨ p. </span> </br>
+                                <span>b). p ∧ q ≡ q ∧ p. </span> </br>
+                                <img id="answer2" style="display: none"  th:src="${session.answerList.get(1).getSrc()}" th:alt="${session.answerList.get(1).getTitle()}">
+                                <button class="button" onclick="showAnswers('answer2')">Show Answer</button>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>3. Translate these statements into English,
+                                    where C ( x ) is “ x is a comedian” and F ( x )
+                                    is  “ x is funny” and the domain consists of all people. </span> </br>
+                                <span>a). ∀ x ( C ( x ) → F ( x )). </span> </br>
+                                <span>b). ∀ x ( C ( x ) ∧ F ( x )). </span> </br>
+                                <span>c). ∃ x ( C ( x ) → F ( x )). </span> </br>
+                                <span>d). ∃ x ( C ( x ) ∧ F ( x )). </span> </br>
+                                <img id="answer3" style="display: none" th:src="${session.answerList.get(2).getSrc()}" th:alt="${session.answerList.get(2).getTitle()}">
+                                <button class="button" onclick="showAnswers('answer3')">Show Answer</button>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>4. Determine the truth value of each of these statements if the domain consists of all  integers. </span> </br>
+                                <span>a). ∀ n ( n + 1 > n ). </span> </br>
+                                <span>b). ∃ n (2 n = 3 n ). </span> </br>
+                                <span>c). ∃ n ( n = − n ). </span> </br>
+                                <span>d). ∀ n (3 n ≤ 4 n ). </span> </br>
+                                <img id="answer4" style="display: none" th:src="${session.answerList.get(3).getSrc()}" th:alt="${session.answerList.get(3).getTitle()}">
+                                <button class="button" onclick="showAnswers('answer4')">Show Answer</button>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>5. For each of these statements find a domain for which the statement is true and a domain for which the statement is false.. </span> </br>
+                                <span>a). Everyone is studying discrete mathematics. </span> </br>
+                                <span>b). Everyone is older than 21 years. </span> </br>
+                                <span>c). Every two people have the same mother. </span> </br>
+                                <span>d). No two different people have the same grandmother. </span> </br>
+                                <img id="answer5" style="display: none" th:src="${session.answerList.get(4).getSrc()}" th:alt="${session.answerList.get(4).getTitle()}">
+                                <button class="button" onclick="showAnswers('answer5')">Show Answer</button>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>6. Express each of these statements using logical operators, predicates, and quantifiers.. </span> </br>
+                                <span>a). Some propositions are tautologies. </span> </br>
+                                <span>b). The negation of a contradiction is a tautology. </span> </br>
+                                <span>c). The disjunction of two contingencies can be a tautology. </span> </br>
+                                <span>d). The conjunction of two tautologies is a tautology. </span> </br>
+                                <img id="answer6" style="display: none" th:src="${session.answerList.get(5).getSrc()}" th:alt="${session.answerList.get(5).getTitle()}">
+                                <button class="button" onclick="showAnswers('answer6')">Show Answer</button>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!--  Chart js -->
+    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="assets/js/init-scripts/chart-js/chartjs-init.js"></script>
+
+</body>
+
+</html>

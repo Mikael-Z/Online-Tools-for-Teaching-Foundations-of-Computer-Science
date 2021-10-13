@@ -1,0 +1,78 @@
+[
+    {
+    "id": 1,
+    "title": "Suppose that an element is known to be among the first four elements in a list of 32 elements. Would a linear search or a binary search locate this element more rapidly?",
+    "type": "JD"
+    },
+    {
+      "id": 2,
+      "title": "From the definition of the matrix product, describe an algorithm in English for computing the product of two upper triangular matrices that ignores those products in the computation that are automatically equal to zero.",
+      "type": "JD"
+    },
+    {
+      "id": 3,
+      "title": "What is the best order to form the product ABC if A, B , and C are matrices with dimensions 3 x 9, 9 x 4, and 4 x 2, respectively?",
+      "type": "JD"
+    },
+    {
+      "id": 4,
+      "title": "What is the best order to form the product ABCD if A, B, C , and D are matrices with dimensions 30 x 10, 10 x 40, 40 x 50, and 50 x 30, respectively?",
+      "type": "JD"
+    },
+    {
+      "id": 5,
+      "title": "Analyze the average-case performance of the linear search algorithm, if exactly half the time the element x is not in the list, and if x is in the list, it is equally likely to be in any position.",
+      "type": "JD"
+    },
+    {
+      "id": 6,
+      "title": "How many edges does a tree with 10,000 vertices have?",
+      "type": "JD"
+    },
+    {
+      "id": 7,
+      "title": "How many vertices does a full 5-ary tree with 100 internal vertices have?",
+      "type": "JD"
+    },
+    {
+      "id": 8,
+      "title": "How many edges does a full binary tree with 1000 internal vertices have?",
+      "type": "JD"
+    },
+    {
+      "id": 9,
+      "title": "How many leaves does a full 3-ary tree with 100 vertices have?",
+      "type": "JD"
+    },
+    {
+      "id": 10,
+      "title": "How many vertices, leaves, and internal vertices does the rooted Fibonacci tree T have, where n is a positive integer? What is its height?",
+      "type": "JD"
+    },
+    {
+      "id": 11,
+      "title": "Place these permutations of {1, 2, 3, 4, 5} in lexicographic order: 43521, 15432, 45321, 23451, 23514, 14532, 21345, 45213, 31452, 31542.",
+      "type": "JD"
+    },
+    {
+      "id": 12,
+      "title": "What is the variance of the number of times a 6 appears when a fair die is rolled 10 times?",
+      "type": "JD"
+    },
+    {
+      "id": 13,
+      "title": "When m balls are distributed into n bins uniformly at random, what is the probability that the first bin remains empty?",
+      "type": "JD"
+    },
+    {
+      "id": 14,
+      "title": "What is the expected number of balls that fall into the first bin when m balls are distributed into n bins uniformly at random?",
+      "type": "JD"
+    },
+    {
+      "id": 15,
+      "title": "What is the expected number of bins that remain empty when m balls are distributed into n bins uniformly at random?",
+      "type": "JD"
+    }
+]
+

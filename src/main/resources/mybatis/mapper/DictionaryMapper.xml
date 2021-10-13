@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teach.mapper.DictionaryMapper">
+    <!--根据类型查询字典项-->
+    <select id="findDicInfo" parameterType="String" resultType="com.teach.pojo.Dictionary">
+        select id, dic_code as dicCode, dic_name as dicName, dic_type as dicType, dic_url as dicURL
+        from
+            dictionary
+        where
+            dic_Type = #{dicType}
+    </select>
+
+    <select id="findDicInfoNum" resultType="java.lang.Integer">
+        select count(*)
+        from
+            dictionary
+        where
+            dic_Type = #{dicType}
+    </select>
+</mapper>

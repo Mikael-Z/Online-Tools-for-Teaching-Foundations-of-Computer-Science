@@ -1,0 +1,144 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+        //非空校验 1.username 2.account 3.password 4.nickname 5.email
+        //校验密码是否输入相同
+        function checkInfo() {
+            var userName = document.getElementById("userName").value;
+            var account = document.getElementById("userAccount").value;
+            var password = document.getElementById("userPassword").value;
+            var passwordAgain = document.getElementById("passwordAgain").value;
+            var nickname = document.getElementById("nickName").value;
+            var email = document.getElementById("email").value;
+
+            //非空校验
+            if(userName==""||userName==null){
+                alert("The real name cannot be empty");
+                window.event.returnValue = false;
+            }
+            if(account==""||account==null){
+                alert("The account cannot be empty");
+                window.event.returnValue = false;
+            }
+            if(password==""||password==null){
+                alert("The password cannot be empty");
+                window.event.returnValue = false;
+            }
+            if(passwordAgain==""||passwordAgain==null){
+                alert("The password again cannot be empty");
+                window.event.returnValue = false;
+            }
+            if(nickname==""||nickname==null){
+                alert("The nickname cannot be empty");
+                window.event.returnValue = false;
+            }
+            if(email==""||email==null){
+                alert("The email cannot be empty");
+                window.event.returnValue = false;
+            }
+
+            //校验两次密码是否相同
+            if(password!=passwordAgain){
+                alert("Two password input is not the same");
+                document.getElementById("passwordAgain").value = "";
+                window.event.returnValue = false;
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form action="toRegister" method="post">
+                        <div class="form-group">
+                            <label>Real Name<font color="red">*</font></label>
+                            <input type="input" class="form-control" placeholder="User Name" name="userName" id="userName">
+                        </div>
+                        <div class="form-group">
+                            <label>Account<font color="red">*</font></label>
+                            <input type="input" class="form-control" placeholder="Account" name="userAccount" id="userAccount">
+                        </div>
+                        <div class="form-group">
+                            <label>NickName<font color="red">*</font></label>
+                            <input type="input" class="form-control" placeholder="NickName" name="nickName" id="nickName">
+                        </div>
+                        <div class="form-group">
+                            <label>Email address<font color="red">*</font></label>
+                            <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password<font color="red">*</font></label>
+                            <input type="password" class="form-control" placeholder="Password" name="userPassword" id="userPassword">
+                        </div>
+                        <div class="form-group">
+                            <label>Password Again<font color="red">*</font></label>
+                            <input type="password" class="form-control" placeholder="Password" id="passwordAgain">
+                        </div>
+                        <div class="form-group">
+                            <label>Birthday</label>
+                            <input type="input" class="form-control" placeholder="2000-0-0" name="userBirthday" id="userBirthday">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="input" class="form-control" placeholder="Phone Number" name="phoneNumber" id="phoneNumber">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" onclick="checkInfo()">Register</button>
+
+                        <div class="register-link m-t-15 text-center">
+                            <p>Already have account ? <a th:href="@{/toLogin}"> Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

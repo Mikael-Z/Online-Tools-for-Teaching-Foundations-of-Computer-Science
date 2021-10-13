@@ -1,0 +1,37 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/teachweb?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+    host: smtp.qq.com
+    username: 1519761611@qq.com
+    password: jsbtwyegawymgbje
+    protocol: smtp
+    default-encoding: UTF-8
+
+  devtools:
+    restart:
+      exclude: /static/
+      
+  session:
+    timeout: 216000
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+mybatis:
+  type-aliases-package: com.teach.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    call-setters-on-nulls: true
+    map-underscore-to-camel-case: true
+
+
+

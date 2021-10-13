@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teach.mapper.GradeExamMapper">
+    <select id="gradeAnswerInfo" resultType="Answer">
+        select
+            id, user_id userId, batch_number batchNumber, create_date createDate,
+            title1, title2, title3, title4, title5, title6, title7, title8, title9, title10,
+            answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10
+        from
+            answer
+        where
+            batch_number = '1' limit 0,1
+    </select>
+
+    <update id="updateBatchNumber" parameterType="string">
+        update
+            answer
+        set
+            batch_number = '2'
+        where
+            id = #{answerId}
+    </update>
+</mapper>

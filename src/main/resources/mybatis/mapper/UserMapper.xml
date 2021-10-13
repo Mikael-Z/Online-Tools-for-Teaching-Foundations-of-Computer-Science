@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teach.mapper.UserMapper">
+    <!--根据账号密码查询用户-->
+    <select id="findUserList" resultType="com.teach.pojo.User">
+        select user_id as userId, user_account as userAccount, user_password as userPassword,
+          user_name as userName, user_birthday as userBirthday, phone_number as phoneNumber,
+          user_status as userStatus, create_date as createDate, account_status as accountStatus,
+          nick_name as nickName, email
+        from
+            user
+        where
+            user_Account = #{userAccount}
+        and
+            user_Password = #{userPassword}
+    </select>
+
+    <!-- 新增用户-->
+    <insert id="saveNewUserInfo" parameterType="User">
+        insert into user
+            (user_id, user_account, user_password, user_name, user_birthday, phone_number, user_status,
+            create_date, account_status, nick_name, email)
+        values
+            (#{userId}, #{userAccount}, #{userPassword}, #{userName}, #{userBirthday}, #{phoneNumber},
+            #{userStatus}, #{createDate}, #{accountStatus}, #{nickName}, #{email})
+    </insert>
+
+    <select id="findUserNum" resultType="java.lang.Integer">
+        select count(*) from user
+    </select>
+
+    <!-- 更新用户 -->
+    <update id="updateUserInfo" parameterType="User">
+        update
+            user
+        set
+            user_name = #{userName}, nick_name = #{nickName}, user_birthday = #{userBirthday}, email = #{email},
+            phone_number = #{phoneNumber}
+        where
+            user_id = #{userId}
+    </update>
+
+    <!--更改密码 -->
+    <update id="changePass" parameterType="User">
+        update
+            user
+        set
+            user_password = #{userPassword}
+        where
+            user_id = #{userId}
+    </update>
+</mapper>
